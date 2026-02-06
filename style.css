@@ -1,0 +1,113 @@
+body {
+    background: linear-gradient(#ffe6f0, #fff);
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    color: #444;
+}
+
+.top-msg {
+    font-size: 1.1rem;
+    color: #d36c8c;
+    margin-bottom: 10px;
+}
+
+.qr-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    width: 230px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    margin-top: 8px;
+    border-radius: 10px;
+    border: 1px solid pink;
+}
+
+button {
+    margin-top: 8px;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 15px;
+    background: pink;
+    cursor: pointer;
+}
+
+img {
+    width: 150px;
+    margin-top: 10px;
+}
+
+/* Floating hearts */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    bottom: -10px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+}
+
+p {
+    white-space: pre-line;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+/* Mobile friendly */
+@media (max-width: 768px) {
+    .qr-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* 🔍 Bigger & scannable QR */
+.card img {
+    width: 220px;
+    /* BIG enough to scan */
+    max-width: 90%;
+    margin-top: 15px;
+}
+
+/* Smooth expand when QR appears */
+.card {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .card img {
+        width: 260px;
+        /* phone camera friendly */
+    }
+}

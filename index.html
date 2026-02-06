@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>For My Love 💕</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="hearts"></div>
+
+    <h1>A Few Surprises, All for You 💕</h1>
+    <p class="top-msg">
+        What did you think? I’d reveal my whole surprise at once?<br>
+        That was just a part, baby 💖<br>
+        Some surprises wait for the perfect moment…
+    </p>
+
+
+    <div class="qr-container">
+
+        <div class="card">
+            <h3>For Your Birthday Love 💌</h3>
+            <p id="msg1"></p>
+            <input type="password" id="pass1" placeholder="Secret word 💕">
+            <button onclick="unlockQR(1)">Unlock</button>
+            <img src="qr1.jpeg" id="qr1" hidden>
+        </div>
+
+        <div class="card">
+            <h3>Yess You Gussed Right Its For Our Anniversary🌸</h3>
+            <p id="msg2"></p>
+            <input type="password" id="pass2" placeholder="Secret word 💕">
+            <button onclick="unlockQR(2)">Unlock</button>
+            <img src="qr2.jpeg" id="qr2" hidden>
+        </div>
+
+        <div class="card">
+            <h3>Yeah You Can Open This One Now ♾️</h3>
+            <p id="msg3"></p>
+            <input type="password" id="pass3" placeholder="Secret word 💕">
+            <button onclick="unlockQR(3)">Unlock</button>
+            <img src="qr3.jpeg" id="qr3" hidden>
+        </div>
+
+    </div>
+
+    <audio id="music" src="assets/music.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
