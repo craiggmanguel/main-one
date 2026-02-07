@@ -92,7 +92,7 @@ p {
     }
 }
 
-/* 🔍 Bigger & scannable QR */
+/* Bigger & scannable QR */
 .card img {
     width: 220px;
     /* BIG enough to scan */
@@ -110,4 +110,16 @@ p {
         width: 260px;
         /* phone camera friendly */
     }
+}
+/*Shake animation for wrong password */
+.shake {
+  animation: shake 0.35s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-6px); }
+  100% { transform: translateX(0); }
 }
