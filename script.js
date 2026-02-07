@@ -1,11 +1,11 @@
-// ----------------- DATE & TIME (IST) -----------------
+//  DATE & TIME 
 function getISTNow() {
     const now = new Date();
     const utc = now.getTime() + now.getTimezoneOffset() * 60000;
     return new Date(utc + 5.5 * 60 * 60 * 1000);
 }
 
-// ----------------- DATA -----------------
+// DATA 
 const data = {
     1: {
         date: new Date("2026-12-04T00:00:00"),
@@ -53,7 +53,7 @@ function fadeInMusic(audio) {
     }, 200);
 }
 
-// ----------------- MAIN UNLOCK FUNCTION -----------------
+//  MAIN UNLOCK FUNCTION 
 function unlockQR(num) {
     const msg = document.getElementById("msg" + num);
     const pass = document
