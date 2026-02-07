@@ -82,9 +82,17 @@ function unlockQR(num) {
 
     // password check
     if (pass !== qrData.password) {
-        msg.innerText = qrData.hint + "\n\n😗 That’s not it… try again";
-        return;
-    }
+  msg.innerText = qrData.hint + "\n\n😗 That’s not it… try again";
+
+  const input = document.getElementById("pass" + num);
+  input.classList.add("shake");
+
+  // remove class so it can shake again next time
+  setTimeout(() => input.classList.remove("shake"), 350);
+
+  return;
+}
+
 
     // success
     msg.innerText = "Unlocked 💖\n" + qrData.message;
@@ -124,3 +132,28 @@ function createHeart() {
     setTimeout(() => heart.remove(), 6000);
 }
 setInterval(createHeart, 500);
+function enableEnterUnlock() {
+  for (let i = 1; i <= 3; i++) {
+    const input = document.getElementById("pass" + i);
+    if (!input) continue;
+
+    input.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter") return;
+
+      const qrData = data[i];
+      const now = getISTNow();
+
+      // 🚫 If date exists and not reached, disable Enter
+      if (qrData.date && now < qrData.date) {
+        e.preventDefault(); // block Enter
+        return;
+      }
+
+      // ✅ Otherwise, allow unlock
+      unlockQR(i);
+    });
+  }
+}
+
+enableEnterUnlock();
+
