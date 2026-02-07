@@ -56,7 +56,12 @@ function fadeInMusic(audio) {
 // ----------------- MAIN UNLOCK FUNCTION -----------------
 function unlockQR(num) {
     const msg = document.getElementById("msg" + num);
-    const pass = document.getElementById("pass" + num).value;
+    const pass = document
+  .getElementById("pass" + num)
+  .value
+  .trim()
+  .toLowerCase();
+
     const music = document.getElementById("music");
     const now = getISTNow();
     const qrData = data[num];
